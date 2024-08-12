@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ProgramBoxProps } from './types';
-import defaultImage from 'path/to/default-image.jpg';
+import defaultImage from '../../assets/images/1.svg';
 
 const ProgramBox: React.FC<ProgramBoxProps> = ({ imgUrl, imgAlt, programName }) => {
   const imageSource = imgUrl || defaultImage;

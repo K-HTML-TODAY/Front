@@ -26,12 +26,12 @@ const getImagePath = (number: number) => {
 
 export default function Ranking({ number }: RankingType) {
   return (
-    <RankingLayout number={number}>
+    <RankingLayout $number={number}>
       <RankingBox>
-        <RankingNumber number={number}>{getImagePath(number)}</RankingNumber>
+        <RankingNumber $number={number}>{getImagePath(number)}</RankingNumber>
         <RankingContent>
           <RankingLogo></RankingLogo>
-          <RankingText number={number}>
+          <RankingText $number={number}>
             <h5>LV.10</h5>
             <h1>경비니</h1>
           </RankingText>
