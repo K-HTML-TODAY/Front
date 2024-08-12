@@ -10,14 +10,6 @@ const router = createBrowserRouter([
     element: <Root />,
   },
   {
-    path: '/mypage',
-    element: <Root />,
-  },
-  {
-    path: '/mission',
-    element: <Root />,
-  },
-  {
     path: '/test',
     children: [
       {

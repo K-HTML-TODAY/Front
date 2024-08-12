@@ -12,7 +12,7 @@ export const NavigationLayout = styled.div`
   }
 `;
 
-export const NavigationBar = styled.div<{ location: string }>`
+export const NavigationBar = styled.div<{ $location: string }>`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -20,8 +20,8 @@ export const NavigationBar = styled.div<{ location: string }>`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: ${({ location }) =>
-    location === '/' ? '4.56rem' : location === '/mission' ? '5.6rem' : '5.7rem'};
+  gap: ${({ $location }) =>
+    $location === '/' ? '4.56rem' : $location === '/mission' ? '5.6rem' : '5.7rem'};
 `;
 
 export const NavigationItem = styled.div`

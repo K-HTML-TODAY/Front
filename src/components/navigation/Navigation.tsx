@@ -23,7 +23,7 @@ export default function Navigation() {
         <Navigation_home />
       )}
 
-      <NavigationBar location={location.pathname}>
+      <NavigationBar $location={location.pathname}>
         {/* 미션 아이콘 및 텍스트 */}
         {location.pathname === '/mission' ? (
           <NavigationBigItem as={Link} to="/mission">
