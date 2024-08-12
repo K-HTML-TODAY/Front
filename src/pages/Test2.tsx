@@ -1,5 +1,6 @@
 import React from 'react';
 import MissionComponent from '../components/mission/MissionComponent';
+import ProgramBox from '../components/ProgramBox/ProgramBox';
 
 function Test2() {
   return (
@@ -14,6 +15,7 @@ function Test2() {
         buttonBackgroundColor={'#47BDFF'}
         link={'/'}
       />
+      <ProgramBox imgUrl={''} imgAlt={''} programName={'중장년층을 위한 컴활 자격증'} />
     </div>
   );
 }
