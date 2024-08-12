@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Root from '../pages/Root';
-import Test2 from '../pages/Test2';
+import Test2 from '../test/Test2';
 import RankingTest from '../test/RankingTest';
+import MissionListTest from '../test/MissionTest';
 
 const router = createBrowserRouter([
   {
@@ -9,10 +10,21 @@ const router = createBrowserRouter([
     element: <Root />,
   },
   {
-    path: '/test2',
-    element: <Test2 />,
     path: '/test',
-    children: [{ path: 'ranking', element: <RankingTest /> }],
+    children: [
+      {
+        path: 'ranking',
+        element: <RankingTest />,
+      },
+      {
+        path: 'missionList',
+        element: <MissionListTest />,
+      },
+      {
+        path: '2',
+        element: <Test2 />,
+      },
+    ],
   },
 ]);
 
