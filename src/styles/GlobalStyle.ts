@@ -31,7 +31,8 @@ export const GlobalStyle = styled.createGlobalStyle`
     line-height: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    margin: 0;
+    max-width: 767px;
+    margin: 0 auto;
     padding: 0;
   }
 
