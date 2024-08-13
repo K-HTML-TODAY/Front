@@ -56,8 +56,9 @@ export default Mypage;
 
 const MypageLayout = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 100%;
 `;
 
@@ -80,6 +81,7 @@ const MypageHeader = styled.div`
 const MypageBody = styled.div`
   background: #f1f5f8;
   width: 100%;
+  max-width: 26.0625rem;
 `;
 
 const MypageBox = styled.div`

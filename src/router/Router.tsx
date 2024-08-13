@@ -8,6 +8,8 @@ import MissionListTest from '../test/MissionTest';
 import MissionBoxTest from '../test/MissionBoxTest';
 import ProgramBoxTest from '../test/ProgramBoxTest';
 import Mypage from '../pages/mypage/Mypage';
+import AIwriting from '../pages/aiwriting/AIwriting';
+import AIresult from '../pages/airesult/AIresult';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,19 @@ const router = createBrowserRouter([
   {
     path: '/mypage',
     element: <Mypage />,
+  },
+  {
+    path: '/mission',
+    children: [
+      {
+        path: 'aiwrite',
+        element: <AIwriting />,
+      },
+      {
+        path: 'airesult',
+        element: <AIresult />,
+      },
+    ],
   },
   {
     path: '/test',

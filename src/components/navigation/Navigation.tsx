@@ -15,7 +15,7 @@ export default function Navigation() {
 
   return (
     <NavigationLayout>
-      {location.pathname === '/mission' ? (
+      {location.pathname.startsWith('/mission') ? (
         <Navigation_mission />
       ) : location.pathname === '/mypage' ? (
         <Navigation_user />
@@ -25,7 +25,7 @@ export default function Navigation() {
 
       <NavigationBar $location={location.pathname}>
         {/* 미션 아이콘 및 텍스트 */}
-        {location.pathname === '/mission' ? (
+        {location.pathname.startsWith('/mission') ? (
           <NavigationBigItem as={Link} to="/mission">
             <div>
               <Mission_white />
