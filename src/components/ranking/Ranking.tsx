@@ -10,6 +10,7 @@ import { RankingType } from './types';
 import { ReactComponent as One } from '../../assets/images/1.svg';
 import { ReactComponent as Two } from '../../assets/images/2.svg';
 import { ReactComponent as Three } from '../../assets/images/3.svg';
+import { ReactComponent as RankingIcon } from '../../assets/images/rankingLogo.svg';
 
 const getImagePath = (number: number) => {
   switch (number) {
@@ -30,7 +31,9 @@ export default function Ranking({ number }: RankingType) {
       <RankingBox>
         <RankingNumber $number={number}>{getImagePath(number)}</RankingNumber>
         <RankingContent>
-          <RankingLogo></RankingLogo>
+          <RankingLogo>
+            <RankingIcon />
+          </RankingLogo>
           <RankingText $number={number}>
             <h5>LV.10</h5>
             <h1>경비니</h1>

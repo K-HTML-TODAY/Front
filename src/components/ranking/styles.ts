@@ -40,6 +40,9 @@ export const RankingLogo = styled.div`
   height: 2.375rem;
   border-radius: 0.4375rem;
   background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const RankingText = styled.div<{ $number: number }>`
