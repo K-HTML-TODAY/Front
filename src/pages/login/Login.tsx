@@ -7,20 +7,25 @@ import { ReactComponent as Logo } from '../../assets/images/Logo.svg';
 import GoogleImg from '../../assets/images/google.svg';
 import KakaoImg from '../../assets/images/kakao.svg';
 import NaverImg from '../../assets/images/naver.svg';
-import { Link } from 'react-router-dom';
-import { useLoginMutation } from '../../service/api';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSignInMutation } from '../../services/sign/signApi';
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginValues>();
-  const [login, { isLoading, error }] = useLoginMutation();
+
+  const [signIn, { isLoading, error }] = useSignInMutation();
 
   const onSubmit: SubmitHandler<LoginValues> = async (data) => {
     try {
-      await login(data).unwrap();
+      const response = await signIn(data).unwrap();
+      sessionStorage.setItem('token', response.token);
+      navigate('/', { replace: true });
     } catch (err) {
       console.error('로그인 실패:', err);
     }
