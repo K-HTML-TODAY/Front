@@ -3,6 +3,10 @@ import { LoginValues } from '../pages/login/types';
 
 interface LoginResponse {}
 
+interface GptResponse {
+  content: string;
+}
+
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({ baseUrl: '/api' }),
@@ -14,7 +18,14 @@ export const api = createApi({
         body: credentials,
       }),
     }),
+    getGptData: builder.query<GptResponse, string>({
+      query: (prompt) => ({
+        url: '/v1/main/getGptApi',
+        method: 'GET',
+        params: { prompt },
+      }),
+    }),
   }),
 });
 
-export const { useLoginMutation } = api;
+export const { useLoginMutation, useGetGptDataQuery } = api;

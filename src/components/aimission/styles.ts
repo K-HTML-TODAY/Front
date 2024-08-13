@@ -121,6 +121,7 @@ export const AIresultBox = styled.div`
   font-weight: 400;
   line-height: normal;
   padding: 1rem;
+  white-space: break-spaces;
 `;
 
 export const AIresultButtonBox = styled.div`
