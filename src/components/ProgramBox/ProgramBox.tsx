@@ -1,17 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import defaultImage from '../../assets/images/defaultImg.svg';
 import { ProgramBoxProps } from './types';
 import defaultImage from '../../assets/images/1.svg';
 
-const ProgramBox: React.FC<ProgramBoxProps> = ({ imgUrl, imgAlt, programName }) => {
+const ProgramBox: React.FC<ProgramBoxProps> = ({ imgUrl, imgAlt, programName, link }) => {
   const imageSource = imgUrl || defaultImage;
 
   return (
     <ProgramBoxContainer>
-      <div id="programImg">
-        <img src={imageSource} alt={imgAlt || 'Program image'} />
-      </div>
-      <div id="programName">{programName}</div>
+      <Link to={link} id="programLink">
+        <div id="programImg">
+          <img src={imageSource} alt={imgAlt || 'Program image'} />
+        </div>
+        <div id="programName">{programName}</div>
+      </Link>
     </ProgramBoxContainer>
   );
 };
@@ -22,6 +26,11 @@ const ProgramBoxContainer = styled.div`
   width: 6.25rem;
   height: 9.625rem;
   flex-shrink: 0;
+
+  #programLink {
+    text-decoration: none;
+    color: inherit;
+  }
 
   #programImg {
     width: 6.25rem;
@@ -34,7 +43,6 @@ const ProgramBoxContainer = styled.div`
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
     }
   }
 
@@ -50,5 +58,6 @@ const ProgramBoxContainer = styled.div`
     font-weight: 400;
     text-align: center;
     line-height: 1.1875rem;
+    box-shadow: 1px 2px 2px 0px rgba(205, 216, 219, 0.5);
   }
 `;

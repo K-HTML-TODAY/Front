@@ -1,3 +1,4 @@
+import React from 'react';
 import MissionList from '../components/mission/MissionList';
 
 export default function MissionListTest() {
