@@ -6,6 +6,7 @@ import Splash from '../pages/splash/Splash';
 import Signup from '../pages/signup/Signup';
 import MissionListTest from '../test/MissionTest';
 import MainPage from '../pages/main/MainPage';
+import JobPage from '../pages/job/JobPage';
 import Mypage from '../pages/mypage/Mypage';
 import AIwriting from '../pages/aiwriting/AIwriting';
 import AIresult from '../pages/airesult/AIresult';
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <MainPage />,
+      },
+      {
+        path: 'job',
+        element: <JobPage />,
       },
     ],
   },

@@ -25,7 +25,11 @@ export const NavigationBar = styled.div<{ $location: string }>`
   align-items: flex-end;
   justify-content: center;
   gap: ${({ $location }) =>
-    $location === '/' ? '4.56rem' : $location === '/mission' ? '5.6rem' : '5.7rem'};
+    $location === '/'
+      ? '4.56rem'
+      : $location === '/mission' || $location === '/job'
+        ? '5.6rem'
+        : '5.7rem'};
 `;
 
 export const NavigationItem = styled.div`
