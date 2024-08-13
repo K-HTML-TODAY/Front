@@ -9,6 +9,7 @@ import Signup from '../pages/signup/Signup';
 import Test2 from '../test/Test2';
 import MissionListTest from '../test/MissionTest';
 import MainPage from '../pages/main/MainPage';
+import JobPage from '../pages/job/JobPage';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <MainPage />,
+      },
+      {
+        path: 'job',
+        element: <JobPage />,
       },
     ],
   },
