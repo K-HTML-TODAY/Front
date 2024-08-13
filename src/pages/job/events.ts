@@ -22,5 +22,21 @@ export const useJob = () => {
     trackMouse: true, // 데스크탑에서도 마우스 스와이프 동작을 지원하도록
   });
 
-  return { currentJobs, handlers, totalPages, currentPage, handlePageChange };
+  const handleBefore = () => {
+    handlePageChange(currentPage - 1);
+  };
+
+  const handleAfter = () => {
+    handlePageChange(currentPage + 1);
+  };
+
+  return {
+    currentJobs,
+    handlers,
+    totalPages,
+    currentPage,
+    handlePageChange,
+    handleBefore,
+    handleAfter,
+  };
 };

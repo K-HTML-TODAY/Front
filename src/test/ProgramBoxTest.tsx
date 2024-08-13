@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgramBox from '../components/programbox/ProgramBox';
+import ProgramBox from '../components/ProgramBox/ProgramBox';
 
 function ProgramBoxTest() {
   return (

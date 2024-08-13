@@ -122,3 +122,46 @@ export const jobData = [
     time: '10:00~18:00',
   },
 ];
+
+export const JobAIData = [
+  {
+    name: '배** 님',
+    age: '56세',
+    title: '책임감과 배려심',
+    location: '경기도 용인시 처인구 거주',
+    ability: '타이핑 업무 가능',
+    history: '사무직 경력',
+  },
+  {
+    name: '배** 님',
+    age: '56세',
+    title: '책임감과 배려심',
+    location: '경기도 용인시 처인구 거주',
+    ability: '타이핑 업무 가능',
+    history: '사무직 경력',
+  },
+  {
+    name: '배** 님',
+    age: '56세',
+    title: '책임감과 배려심',
+    location: '경기도 용인시 처인구 거주',
+    ability: '타이핑 업무 가능',
+    history: '사무직 경력',
+  },
+  {
+    name: '배** 님',
+    age: '56세',
+    title: '책임감과 배려심',
+    location: '경기도 용인시 처인구 거주',
+    ability: '타이핑 업무 가능',
+    history: '사무직 경력',
+  },
+  {
+    name: '배** 님',
+    age: '56세',
+    title: '책임감과 배려심',
+    location: '경기도 용인시 처인구 거주',
+    ability: '타이핑 업무 가능',
+    history: '사무직 경력',
+  },
+];
