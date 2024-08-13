@@ -22,13 +22,23 @@ function Mypage() {
 
   useEffect(() => {
     const fetchUserData = async () => {
+      const token = sessionStorage.getItem('token');
+
+      if (!token) {
+        setError('No token found');
+        setLoading(false);
+        return;
+      }
+
       try {
-        const response = await axios.get('http://localhost:8081/api/v1/mypage/getUser', {
+        const response = await axios.get('/api/v1/mypage/getUser', {
           headers: {
-            'X-AUTH-TOKEN': 'your-actual-token-here',
+            'X-AUTH-TOKEN': token,
           },
         });
         setUser(response.data);
+        sessionStorage.setItem('nickname', response.data.nickname);
+        sessionStorage.setItem('uid', response.data.uid);
       } catch (err) {
         setError('Failed to fetch user data');
         console.error('Error fetching user data:', err);
@@ -41,9 +51,8 @@ function Mypage() {
   }, []);
 
   const handleLogout = () => {
-    // 로그아웃 로직
-    navigate('/login');
     sessionStorage.removeItem('token');
+    navigate('/login');
   };
 
   if (loading) return <p>Loading...</p>;
@@ -64,8 +73,7 @@ function Mypage() {
               {user?.name || '이름 없음'} <span className="name-span">님</span>
             </h2>
             <p className="level">
-              {user?.nickname || '별명 없음'}님의 레벨은 현재 LV.{user?.account || '0'}입니다.{' '}
-              <br />
+              {user?.nickname || '별명 없음'}님의 레벨은 현재 LV.{user?.uid || '0'}입니다. <br />
               이투가 제안하는 미션을 통해 레벨을 올려보세요!
             </p>
           </MypageTextBox>
