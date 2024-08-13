@@ -30,11 +30,15 @@ export default function MainSection({ Logo, title }: MainSectionType) {
               mainText={'AI 직무 분석 테스트'}
               buttonBackgroundColor={'#FF8A00'}
               link={'/'}
+              boxWidth={'10.125'}
+              boxHeight={'6.625'}
             />
             <MissionComponent
               mainText={'추천 프로젝트 참여'}
               buttonBackgroundColor={'#47BDFF'}
               link={'/'}
+              boxWidth={'10.125'}
+              boxHeight={'6.625'}
             />
           </>
         )}

@@ -6,7 +6,7 @@ import {
   InputTitle,
   InputContext,
   WritingSubmitButton,
-} from '../../components/aiwrite/styles';
+} from '../../components/aimission/styles';
 import Navigation from '../../components/navigation/Navigation';
 
 const AIwriting: React.FC = () => {

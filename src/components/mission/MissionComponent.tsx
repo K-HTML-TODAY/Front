@@ -4,6 +4,8 @@ import { MissionComponentProps } from './types';
 
 const MissionComponent: React.FC<MissionComponentProps> = ({
   mainText,
+  boxWidth,
+  boxHeight,
   buttonBackgroundColor,
   link,
 }) => {
@@ -12,7 +14,11 @@ const MissionComponent: React.FC<MissionComponentProps> = ({
   };
 
   return (
-    <MissionComponentBox buttonBackgroundColor={buttonBackgroundColor}>
+    <MissionComponentBox
+      boxWidth={boxWidth}
+      boxHeight={boxHeight}
+      buttonBackgroundColor={buttonBackgroundColor}
+    >
       <h1 id="subText">1Level up!</h1>
       <h2 id="mainText">{mainText}</h2>
       <div id="MissionButton" onClick={handleClick}>
@@ -24,9 +30,13 @@ const MissionComponent: React.FC<MissionComponentProps> = ({
 
 export default MissionComponent;
 
-const MissionComponentBox = styled.div<{ buttonBackgroundColor: string }>`
-  width: 10.125rem;
-  height: 6.625rem;
+const MissionComponentBox = styled.div<{
+  boxWidth: string;
+  boxHeight: string;
+  buttonBackgroundColor: string;
+}>`
+  width: ${(props) => props.boxWidth}rem;
+  height: ${(props) => props.boxHeight}rem;
   border-radius: 0.5625rem;
   background: #fff;
   box-shadow: 0px 0px 5px 0px #d9e5ec;

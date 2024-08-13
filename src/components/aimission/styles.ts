@@ -25,14 +25,19 @@ export const WritingBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 26.0625rem;
-  flex-shrink: 0;
+  width: 26.0625rem;
+  height: 100vh;
   background: #f1f5f8;
   padding-top: 2.37rem;
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  #missionlistBox {
+    display: flex;
+    flex-direction: column;
+    gap: 1.31rem;
   }
 `;
 

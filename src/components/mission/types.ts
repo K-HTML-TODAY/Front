@@ -1,5 +1,7 @@
 export interface MissionComponentProps {
   mainText: string;
+  boxWidth: string;
+  boxHeight: string;
   buttonBackgroundColor: string;
   link: string;
 }
