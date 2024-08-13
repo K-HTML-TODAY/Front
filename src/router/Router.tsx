@@ -1,14 +1,16 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Root from '../pages/Root';
 import RankingTest from '../test/RankingTest';
-import MissionTest from '../test/MissionTest';
-import ProgramBoxTest from '../test/ProgramBoxTest';
 import Login from '../pages/login/Login';
 import Splash from '../pages/splash/Splash';
 import Signup from '../pages/signup/Signup';
-import Test2 from '../test/Test2';
 import MissionListTest from '../test/MissionTest';
 import MainPage from '../pages/main/MainPage';
+import Mypage from '../pages/mypage/Mypage';
+import AIwriting from '../pages/aiwriting/AIwriting';
+import AIresult from '../pages/airesult/AIresult';
+import ProgramBoxTest from '../test/ProgramBoxTest';
+import MissionBoxTest from '../test/MissionBoxTest';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,23 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   {
+    path: '/mypage',
+    element: <Mypage />,
+  },
+  {
+    path: '/mission',
+    children: [
+      {
+        path: 'aiwrite',
+        element: <AIwriting />,
+      },
+      {
+        path: 'airesult',
+        element: <AIresult />,
+      },
+    ],
+  },
+  {
     path: '/test',
     children: [
       {
@@ -45,18 +64,14 @@ const router = createBrowserRouter([
         element: <MissionListTest />,
       },
       {
-        path: '2',
-        element: <Test2 />,
+        path: 'missionBox',
+        element: <MissionBoxTest />,
+      },
+      {
+        path: 'programBox',
+        element: <ProgramBoxTest />,
       },
     ],
-  },
-  {
-    path: '/test',
-    children: [{ path: 'mission', element: <MissionTest /> }],
-  },
-  {
-    path: '/test',
-    children: [{ path: 'programbox', element: <ProgramBoxTest /> }],
   },
 ]);
 
