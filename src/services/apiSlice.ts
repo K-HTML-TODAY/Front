@@ -7,7 +7,6 @@ const baseQuery = fetchBaseQuery({
   credentials: 'include',
   prepareHeaders: (headers) => {
     const token = sessionStorage.getItem('token');
-    console.log(token);
     if (token) {
       headers.set('X-AUTH-TOKEN', token);
     }

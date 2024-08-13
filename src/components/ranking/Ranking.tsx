@@ -25,7 +25,7 @@ const getImagePath = (number: number) => {
   }
 };
 
-export default function Ranking({ number }: RankingType) {
+export default function Ranking({ number, nickname, level }: RankingType) {
   return (
     <RankingLayout $number={number}>
       <RankingBox>
@@ -35,8 +35,8 @@ export default function Ranking({ number }: RankingType) {
             <RankingIcon />
           </RankingLogo>
           <RankingText $number={number}>
-            <h5>LV.10</h5>
-            <h1>경비니</h1>
+            <h5>LV.{level}</h5>
+            <h1>{nickname}</h1>
           </RankingText>
         </RankingContent>
       </RankingBox>

@@ -13,7 +13,13 @@ import job1 from '../../assets/images/job1.png';
 import job2 from '../../assets/images/job2.png';
 import job3 from '../../assets/images/job3.png';
 
-export default function MainSection({ Logo, title }: MainSectionType) {
+export default function MainSection({ Logo, title, onClick, ranking }: MainSectionType) {
+  const rankingList = ranking || [
+    { nickname: '', level: 0 },
+    { nickname: '', level: 0 },
+    { nickname: '', level: 0 },
+  ];
+
   return (
     <MainSectionContainer title={title}>
       <MainSectionTitle>
@@ -21,22 +27,24 @@ export default function MainSection({ Logo, title }: MainSectionType) {
           {Logo ? <Logo /> : <></>}
           <span>{title}</span>
         </MainSectionWithLogo>
-        {(title === '오늘의 미션' || title === '추천 구인 구직') && <More onClick={() => {}} />}
+        {(title === '오늘의 미션' || title === '추천 구인 구직') && onClick && (
+          <More onClick={onClick} />
+        )}
       </MainSectionTitle>
       <MainSectionBox title={title}>
         {title === '오늘의 미션' && (
           <>
             <MissionComponent
-              mainText={'AI 직무 분석 테스트'}
+              mainText={'AI 활용한 구인글 쓰기'}
               buttonBackgroundColor={'#FF8A00'}
-              link={'/'}
+              link={'mission/aiwrite'}
               boxWidth={'10.125'}
               boxHeight={'6.625'}
             />
             <MissionComponent
-              mainText={'추천 프로젝트 참여'}
+              mainText={'추천 구인구직 탐색'}
               buttonBackgroundColor={'#47BDFF'}
-              link={'/'}
+              link={'job'}
               boxWidth={'10.125'}
               boxHeight={'6.625'}
             />
@@ -44,9 +52,21 @@ export default function MainSection({ Logo, title }: MainSectionType) {
         )}
         {title === '도전 이투!' && (
           <>
-            <Ranking number={1} />
-            <Ranking number={2} />
-            <Ranking number={3} />
+            <Ranking
+              number={1}
+              nickname={rankingList[0]?.nickname || ''}
+              level={rankingList[0]?.level || 0}
+            />
+            <Ranking
+              number={2}
+              nickname={rankingList[1]?.nickname || ''}
+              level={rankingList[1]?.level || 0}
+            />
+            <Ranking
+              number={3}
+              nickname={rankingList[2]?.nickname || ''}
+              level={rankingList[2]?.level || 0}
+            />
           </>
         )}
         {title === '추천 구인 구직' && (
