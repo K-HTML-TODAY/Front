@@ -3,11 +3,18 @@ import Root from '../pages/Root';
 import Test2 from '../test/Test2';
 import RankingTest from '../test/RankingTest';
 import MissionListTest from '../test/MissionTest';
+import MainPage from '../pages/main/MainPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    children: [
+      {
+        path: '',
+        element: <MainPage />,
+      },
+    ],
   },
   {
     path: '/test',

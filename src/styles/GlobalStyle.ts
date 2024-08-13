@@ -34,6 +34,7 @@ export const GlobalStyle = styled.createGlobalStyle`
     max-width: 767px;
     margin: 0 auto;
     padding: 0;
+    overflow-x: hidden;
   }
 
   ::-webkit-scrollbar {
