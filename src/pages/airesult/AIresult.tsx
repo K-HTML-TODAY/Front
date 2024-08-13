@@ -26,7 +26,7 @@ const AIresult: React.FC = () => {
 
   const handleUpdateClick = () => {
     console.log('결과 업로드:', result);
-    navigate('/mission/success');
+    navigate('/mission/aisuccess');
   };
 
   return (

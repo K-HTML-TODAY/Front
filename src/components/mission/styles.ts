@@ -40,4 +40,5 @@ export const MissionButton = styled.button<{ type?: string }>`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 `;

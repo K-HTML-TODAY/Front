@@ -12,10 +12,12 @@ interface User {
   phone: string;
   account: string;
   nickname: string;
+  level: number;
 }
 
 function Mypage() {
   const [user, setUser] = useState<User | null>(null);
+  const [level, setLevel] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -24,21 +26,25 @@ function Mypage() {
     const fetchUserData = async () => {
       const token = sessionStorage.getItem('token');
 
-      if (!token) {
-        setError('No token found');
-        setLoading(false);
-        return;
-      }
-
       try {
-        const response = await axios.get('/api/v1/mypage/getUser', {
+        const userResponse = await axios.get('/api/v1/mypage/getUser', {
           headers: {
             'X-AUTH-TOKEN': token,
           },
         });
-        setUser(response.data);
-        sessionStorage.setItem('nickname', response.data.nickname);
-        sessionStorage.setItem('uid', response.data.uid);
+        setUser(userResponse.data);
+        sessionStorage.setItem('nickname', userResponse.data.nickname);
+        sessionStorage.setItem('uid', userResponse.data.uid.toString());
+
+        const uid = userResponse.data.uid;
+        const levelResponse = await axios.get(`/api/v1/level/countLevel/${uid}`, {
+          headers: {
+            'X-AUTH-TOKEN': token,
+          },
+        });
+
+        console.log('Level response data:', levelResponse.data);
+        setLevel(levelResponse.data);
       } catch (err) {
         setError('Failed to fetch user data');
         console.error('Error fetching user data:', err);
@@ -57,7 +63,6 @@ function Mypage() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
-
   return (
     <MypageLayout>
       <MypageHeader>
@@ -70,10 +75,11 @@ function Mypage() {
           </MypageImgBox>
           <MypageTextBox>
             <h2 className="name">
-              {user?.name || '이름 없음'} <span className="name-span">님</span>
+              {user?.nickname || '별명 없음'}
+              <span className="name-span">님 ({user?.name || '이름 없음'})</span>
             </h2>
             <p className="level">
-              {user?.nickname || '별명 없음'}님의 레벨은 현재 LV.{user?.uid || '0'}입니다. <br />
+              {user?.nickname || '별명 없음'}님의 레벨은 현재 LV.{level}입니다. <br />
               이투가 제안하는 미션을 통해 레벨을 올려보세요!
             </p>
           </MypageTextBox>
