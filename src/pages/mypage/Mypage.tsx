@@ -81,6 +81,7 @@ const MypageHeader = styled.div`
 const MypageBody = styled.div`
   background: #f1f5f8;
   width: 100%;
+  height: 100vh;
   max-width: 26.0625rem;
 `;
 

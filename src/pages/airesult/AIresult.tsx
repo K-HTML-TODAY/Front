@@ -8,7 +8,7 @@ import {
   AIresultButtonBox,
   AIrewritebtn,
   AIupdatebtn,
-} from '../../components/aiwrite/styles';
+} from '../../components/aimission/styles';
 import Navigation from '../../components/navigation/Navigation';
 
 interface LocationState {

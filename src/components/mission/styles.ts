@@ -7,6 +7,7 @@ export const MissionListLayout = styled.div`
   box-shadow: 1px 2px 2px 0px rgba(205, 216, 219, 0.5);
   display: flex;
   justify-content: space-between;
+  background: #fff;
 `;
 
 export const MissionListBox = styled.div`
