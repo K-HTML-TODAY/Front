@@ -1,22 +1,26 @@
 import styled from 'styled-components';
 
 export const NavigationLayout = styled.div`
-  width: 26.0625rem;
-  height: 6.4375rem;
   display: flex;
   align-items: flex-end;
-  position: relative;
+  overflow-x: hidden;
 
   > svg {
-    position: absolute;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
 
 export const NavigationBar = styled.div<{ $location: string }>`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: transparent;
+  width: 26.0625rem;
+  height: 7.5rem;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent !important;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -28,7 +32,8 @@ export const NavigationItem = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 0.25rem;
   padding: 2.88rem 0 0.81rem;
 
   span {
@@ -46,7 +51,9 @@ export const NavigationBigItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.69rem;
+  padding: 0 0 0.81rem;
 
   div {
     width: 3.75rem;

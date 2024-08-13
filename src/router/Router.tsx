@@ -5,16 +5,23 @@ import Login from '../pages/login/Login';
 import Splash from '../pages/splash/Splash';
 import Signup from '../pages/signup/Signup';
 import MissionListTest from '../test/MissionTest';
-import MissionBoxTest from '../test/MissionBoxTest';
-import ProgramBoxTest from '../test/ProgramBoxTest';
+import MainPage from '../pages/main/MainPage';
 import Mypage from '../pages/mypage/Mypage';
 import AIwriting from '../pages/aiwriting/AIwriting';
 import AIresult from '../pages/airesult/AIresult';
+import ProgramBoxTest from '../test/ProgramBoxTest';
+import MissionBoxTest from '../test/MissionBoxTest';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    children: [
+      {
+        path: '',
+        element: <MainPage />,
+      },
+    ],
   },
   {
     path: '/splash',
