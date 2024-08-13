@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import defaultImage from '../../assets/images/defaultImg.svg';
 import { ProgramBoxProps } from './types';
+import defaultImage from '../../assets/images/1.svg';
 
 const ProgramBox: React.FC<ProgramBoxProps> = ({ imgUrl, imgAlt, programName, link }) => {
   const imageSource = imgUrl || defaultImage;

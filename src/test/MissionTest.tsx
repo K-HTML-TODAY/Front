@@ -1,21 +1,20 @@
 import React from 'react';
-import MissionComponent from '../components/mission/MissionComponent';
+import MissionList from '../components/mission/MissionList';
 
-function MissionTest() {
+export default function MissionListTest() {
   return (
-    <div>
-      <MissionComponent
-        mainText={'AI 직무 분석 테스트'}
-        buttonBackgroundColor={'#FF8A00'}
-        link={'/'}
+    <>
+      <MissionList
+        type="AI"
+        title="AI 직무 분석 테스트 하기"
+        description="테스트를 통해 자신의 성향 및 추천 직업을 알아보세요"
+        link="/"
       />
-      <MissionComponent
-        mainText={'추천 프로젝트 참여'}
-        buttonBackgroundColor={'#47BDFF'}
-        link={'/'}
+      <MissionList
+        title="추천 프로젝트 정보 찾아보기"
+        description="AI가 추천해준 프로젝트 정보를 정리해보세요"
+        link="/"
       />
-    </div>
+    </>
   );
 }
-
-export default MissionTest;
