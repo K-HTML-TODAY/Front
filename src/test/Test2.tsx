@@ -15,7 +15,7 @@ function Test2() {
         buttonBackgroundColor={'#47BDFF'}
         link={'/'}
       />
-      <ProgramBox imgUrl={''} imgAlt={''} programName={'중장년층을 위한 컴활 자격증'} />
+      <ProgramBox imgUrl={''} imgAlt={''} programName={'중장년층을 위한 컴활 자격증'} link={'/'} />
     </div>
   );
 }

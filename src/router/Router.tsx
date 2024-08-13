@@ -7,7 +7,6 @@ import Login from '../pages/login/Login';
 import Splash from '../pages/splash/Splash';
 import Signup from '../pages/signup/Signup';
 import Test2 from '../test/Test2';
-import RankingTest from '../test/RankingTest';
 import MissionListTest from '../test/MissionTest';
 import MainPage from '../pages/main/MainPage';
 
