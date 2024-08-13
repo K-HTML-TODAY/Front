@@ -1,14 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Root from '../pages/Root';
 import RankingTest from '../test/RankingTest';
-import MissionTest from '../test/MissionTest';
-import ProgramBoxTest from '../test/ProgramBoxTest';
 import Login from '../pages/login/Login';
 import Splash from '../pages/splash/Splash';
 import Signup from '../pages/signup/Signup';
-import Test2 from '../test/Test2';
-import RankingTest from '../test/RankingTest';
 import MissionListTest from '../test/MissionTest';
+import MissionBoxTest from '../test/MissionBoxTest';
+import ProgramBoxTest from '../test/ProgramBoxTest';
+import Mypage from '../pages/mypage/Mypage';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +27,10 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   {
+    path: '/mypage',
+    element: <Mypage />,
+  },
+  {
     path: '/test',
     children: [
       {
@@ -39,18 +42,14 @@ const router = createBrowserRouter([
         element: <MissionListTest />,
       },
       {
-        path: '2',
-        element: <Test2 />,
+        path: 'missionBox',
+        element: <MissionBoxTest />,
+      },
+      {
+        path: 'programBox',
+        element: <ProgramBoxTest />,
       },
     ],
-  },
-  {
-    path: '/test',
-    children: [{ path: 'mission', element: <MissionTest /> }],
-  },
-  {
-    path: '/test',
-    children: [{ path: 'programbox', element: <ProgramBoxTest /> }],
   },
 ]);
 

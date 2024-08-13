@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import defaultImage from '../../assets/images/defaultImg.svg';
 import { ProgramBoxProps } from './types';
 import defaultImage from '../../assets/images/1.svg';
 
