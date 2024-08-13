@@ -3,8 +3,30 @@ import styled from 'styled-components';
 import { ReactComponent as SuccessImg } from '../../assets/images/successImg.svg';
 import Navigation from '../../components/navigation/Navigation';
 import MissionComponent from '../../components/mission/MissionComponent';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function AIsuccess() {
+  const uid = sessionStorage.getItem('uid');
+  const nickname = sessionStorage.getItem('nickname');
+
+  const navigate = useNavigate();
+
+  const handleLevelUp = async () => {
+    try {
+      await axios.post('/api/v1/level/levelUp', null, {
+        params: {
+          uid: uid,
+        },
+        headers: {
+          'X-AUTH-TOKEN': sessionStorage.getItem('token'),
+        },
+      });
+      navigate('/');
+    } catch (err) {
+      console.error('실패:', err);
+    }
+  };
   return (
     <AIsuccessLayout>
       <div id="aisuccessgraybox">
@@ -14,13 +36,15 @@ function AIsuccess() {
             <SuccessImg />
           </div>
           <p>
-            <span>채은</span>님께서 AI를 활용하여
+            <span>{nickname}</span>님께서 AI를 활용하여
             <br />
             구인구직 글을 성공적으로 업로드하였어요
             <br />
             아래 버튼을 눌러 보상을 받아 레벨을 높여보아요!
           </p>
-          <div id="levelupButton">Level up!</div>
+          <div id="levelupButton" onClick={handleLevelUp}>
+            Level up!
+          </div>
         </AIsuccessBox>
       </div>
       <p id="middletext">다른 미션도 수행하시겠어요?</p>

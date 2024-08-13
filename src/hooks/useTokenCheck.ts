@@ -1,19 +1,26 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const useTokenCheck = () => {
-  const navigate = useNavigate();
-  const accessToken = sessionStorage.getItem('token');
-
   useEffect(() => {
-    if (!accessToken) {
-      // 토큰이 없으면 로그아웃 처리
-      sessionStorage.removeItem('token');
-      sessionStorage.removeItem('nickname');
-      sessionStorage.removeItem('uid');
-      navigate('/login', { replace: true });
-    }
-  }, [accessToken]);
+    const fetchUserData = async () => {
+      const token = sessionStorage.getItem('token');
+
+      try {
+        const response = await axios.get('/api/v1/mypage/getUser', {
+          headers: {
+            'X-AUTH-TOKEN': token,
+          },
+        });
+        sessionStorage.setItem('nickname', response.data.nickname);
+        sessionStorage.setItem('uid', response.data.uid);
+      } catch (err) {
+        console.error('Error fetching user data:', err);
+      }
+    };
+
+    fetchUserData();
+  }, []);
 };
 
 export default useTokenCheck;

@@ -16,7 +16,8 @@ import MainSection from './MainSection';
 import { useMain } from './events';
 
 export default function MainPage() {
-  const { level, isLevelSuccess } = useMain();
+  const { level, progressPercentage, handleMissionList, handleJobList, ranking } = useMain();
+  const nickname = sessionStorage.getItem('nickname');
 
   return (
     <MainLayout>
@@ -24,25 +25,25 @@ export default function MainPage() {
         <MainTop>
           <Logo />
           <MainText>
-            <h1>채은님, 안녕하세요</h1>
+            <h1>{nickname}님, 안녕하세요</h1>
             <h2>오늘도 제 2의 삶을 위해 이투와 함께 성장해봐요!</h2>
           </MainText>
           <MainLevelBox>
             <MainLevelText>
-              {isLevelSuccess && <span>LV.{level}</span>}
+              <span>LV.{level}</span>
               <span>LV.10</span>
             </MainLevelText>
             <MainLevelBar>
-              <MainLevelProgress>
-                <span>30%</span>
+              <MainLevelProgress percentage={progressPercentage}>
+                <span>{progressPercentage}%</span>
               </MainLevelProgress>
             </MainLevelBar>
           </MainLevelBox>
         </MainTop>
-        <MainSection Logo={MissionIcon} title="오늘의 미션" />
-        <MainSection Logo={RankingIcon} title="도전 이투!" />
+        <MainSection Logo={MissionIcon} title="오늘의 미션" onClick={handleMissionList} />
+        <MainSection Logo={RankingIcon} title="도전 이투!" ranking={ranking} />
         <MainJob>
-          <MainSection title="추천 구인 구직" />
+          <MainSection title="추천 구인 구직" onClick={handleJobList} />
         </MainJob>
       </MainBox>
     </MainLayout>

@@ -10,7 +10,6 @@ import JobPage from '../pages/job/JobPage';
 import Mypage from '../pages/mypage/Mypage';
 import AIwriting from '../pages/aiwriting/AIwriting';
 import AIresult from '../pages/airesult/AIresult';
-import ProgramBoxTest from '../test/ProgramBoxTest';
 import MissionBoxTest from '../test/MissionBoxTest';
 import AImission from '../pages/aimission/AImission';
 import AIsuccess from '../pages/aisuccess/AIsuccess';
@@ -81,10 +80,6 @@ const router = createBrowserRouter([
       {
         path: 'missionBox',
         element: <MissionBoxTest />,
-      },
-      {
-        path: 'programBox',
-        element: <ProgramBoxTest />,
       },
     ],
   },

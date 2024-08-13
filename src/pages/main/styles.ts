@@ -66,8 +66,8 @@ export const MainLevelBar = styled.div`
   padding: 0 0.38rem;
 `;
 
-export const MainLevelProgress = styled.div`
-  width: 6.1875rem;
+export const MainLevelProgress = styled.div<{ percentage: number }>`
+  width: ${({ percentage }) => `${percentage}%`};
   height: 0.8125rem;
   border-radius: 1.25rem;
   background: linear-gradient(90deg, #10a9ff 0%, #4a7dff 100%);
