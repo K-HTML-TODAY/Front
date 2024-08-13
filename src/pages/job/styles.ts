@@ -51,7 +51,15 @@ export const JobGrid = styled.div`
   gap: 0 1.12rem;
 `;
 
+export const JobFlex = styled.div`
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.06rem;
+`;
+
 export const JobPaging = styled.div`
   display: flex;
+  align-items: center;
   gap: 0.87rem;
 `;

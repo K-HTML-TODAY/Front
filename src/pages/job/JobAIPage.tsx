@@ -5,7 +5,7 @@ import { useJob } from './events';
 import { ReactComponent as Before } from '../../assets/images/before.svg';
 import { ReactComponent as After } from '../../assets/images/after.svg';
 
-export default function JobPage() {
+export default function JobAIPage() {
   const {
     currentJobs,
     totalPages,
@@ -19,8 +19,8 @@ export default function JobPage() {
   return (
     <JobLayout>
       <JobTop>
-        <h2>이투에서 소개해드리는 오늘의 구인구직글입니다</h2>
-        <h1>추천 구인구직</h1>
+        <h2>이투 AI가 도와준 구직글 모음</h2>
+        <h1>이투 인재모음</h1>
       </JobTop>
       <JobContent>
         <JobGrid {...handlers}>
