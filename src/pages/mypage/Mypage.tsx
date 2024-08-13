@@ -1,17 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import { ReactComponent as MypageImg } from '../../assets/images/mypage.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import Navigation from '../../components/navigation/Navigation';
 
+interface User {
+  uid: number;
+  name: string;
+  email: string;
+  phone: string;
+  account: string;
+  nickname: string;
+}
+
 function Mypage() {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8081/api/v1/mypage/getUser', {
+          headers: {
+            'X-AUTH-TOKEN': 'your-actual-token-here',
+          },
+        });
+        setUser(response.data);
+      } catch (err) {
+        setError('Failed to fetch user data');
+        console.error('Error fetching user data:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleLogout = () => {
     // 로그아웃 로직
     navigate('/login');
     sessionStorage.removeItem('token');
   };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <MypageLayout>
@@ -25,10 +61,11 @@ function Mypage() {
           </MypageImgBox>
           <MypageTextBox>
             <h2 className="name">
-              채은 <span className="name-span">님 (배채은)</span>
+              {user?.name || '이름 없음'} <span className="name-span">님</span>
             </h2>
             <p className="level">
-              채은님의 레벨은 현재 LV.3입니다. <br />
+              {user?.nickname || '별명 없음'}님의 레벨은 현재 LV.{user?.account || '0'}입니다.{' '}
+              <br />
               이투가 제안하는 미션을 통해 레벨을 올려보세요!
             </p>
           </MypageTextBox>

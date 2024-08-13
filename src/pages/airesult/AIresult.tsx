@@ -2,8 +2,8 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
   AIwritingLayout,
-  WritingBackground,
   WritingTitle,
+  WritingBackground,
   AIresultBox,
   AIresultButtonBox,
   AIrewritebtn,
