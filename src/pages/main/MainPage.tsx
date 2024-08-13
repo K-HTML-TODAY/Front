@@ -13,8 +13,11 @@ import { ReactComponent as Logo } from '../../assets/images/logo-s.svg';
 import { ReactComponent as MissionIcon } from '../../assets/images/missionIcon.svg';
 import { ReactComponent as RankingIcon } from '../../assets/images/rankingIcon.svg';
 import MainSection from './MainSection';
+import { useMain } from './events';
 
 export default function MainPage() {
+  const { level, isLevelSuccess } = useMain();
+
   return (
     <MainLayout>
       <MainBox>
@@ -26,7 +29,7 @@ export default function MainPage() {
           </MainText>
           <MainLevelBox>
             <MainLevelText>
-              <span>LV.1</span>
+              {isLevelSuccess && <span>LV.{level}</span>}
               <span>LV.10</span>
             </MainLevelText>
             <MainLevelBar>

@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import Input from '../../components/input/Input';
 import { SignUpValues } from './types';
 import { useNavigate } from 'react-router-dom';
+import { useSignUpMutation } from '../../services/sign/signApi';
 
 const SignUp: React.FC = () => {
   const {
@@ -13,10 +14,20 @@ const SignUp: React.FC = () => {
     formState: { errors },
   } = useForm<SignUpValues>();
 
+  const [signUp] = useSignUpMutation();
+
   const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<SignUpValues> = (data) => {
+  const onSubmit: SubmitHandler<SignUpValues> = async (data) => {
     console.log('회원가입 데이터:', data);
+    try {
+      const response = await signUp(data).unwrap();
+      console.log(response);
+      navigate('/login', { replace: true });
+    } catch (error) {
+      console.error(error);
+      alert('회원가입에 실패했습니다.');
+    }
   };
 
   return (
