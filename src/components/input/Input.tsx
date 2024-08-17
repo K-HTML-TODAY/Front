@@ -5,7 +5,11 @@ import { InputProps, InputTextBoxProps } from './types';
 const Input: React.FC<InputProps> = ({ name, register, placeholder, width }) => {
   return (
     <InputTextBox width={width}>
-      <StyledInput {...register(name)} placeholder={placeholder} />
+      <StyledInput
+        {...register(name)}
+        placeholder={placeholder}
+        type={name === 'password' ? 'password' : 'text'}
+      />
     </InputTextBox>
   );
 };

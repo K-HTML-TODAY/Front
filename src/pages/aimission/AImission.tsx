@@ -15,18 +15,18 @@ function AImission() {
         <div id="missionlistBox">
           <MissionList
             type="AI"
-            title="AI 직무 분석 테스트 하기"
-            description="테스트를 통해 자신의 성향 및 추천 직업을 알아보세요"
+            title="AI 활용하여 간단하게 구인글 업로드"
+            description="구인글을 손쉽게 AI를 활용하여 업로드 해보세요"
             link="/mission/aiwrite"
           />
           <MissionList
-            title="추천 프로젝트 정보 찾아보기"
-            description="AI가 추천해준 프로젝트 정보를 정리해보세요"
+            title="다양한 구인구직 글 찾아보기"
+            description="당신의 근처에 있는 추천 구인구직 글을 찾아보세요"
             link="/"
           />
           <MissionList
-            title="추천 프로젝트 정보 찾아보기"
-            description="AI가 추천해준 프로젝트 정보를 정리해보세요"
+            title="자신의 커리어 목표 설정하기"
+            description="자신의 구체적인 목표를 설정해보세요"
             link="/"
           />
           <MissionList

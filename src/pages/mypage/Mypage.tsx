@@ -36,7 +36,7 @@ function Mypage() {
         sessionStorage.setItem('nickname', userResponse.data.nickname);
         sessionStorage.setItem('uid', userResponse.data.uid.toString());
 
-        const uid = userResponse.data.uid;
+        const uid = sessionStorage.getItem('uid');
         const levelResponse = await axios.get(`/api/v1/level/countLevel/${uid}`, {
           headers: {
             'X-AUTH-TOKEN': token,
@@ -44,7 +44,7 @@ function Mypage() {
         });
 
         console.log('Level response data:', levelResponse.data);
-        setLevel(levelResponse.data);
+        setLevel(levelResponse.data.count);
       } catch (err) {
         setError('Failed to fetch user data');
         console.error('Error fetching user data:', err);
