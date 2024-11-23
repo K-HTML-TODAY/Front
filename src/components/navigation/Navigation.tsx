@@ -40,15 +40,15 @@ export default function Navigation() {
         )}
 
         {/* 홈 아이콘 및 텍스트 */}
-        {location.pathname === '/' ? (
-          <NavigationBigItem as={Link} to="/">
+        {location.pathname === '/main' ? (
+          <NavigationBigItem as={Link} to="/main">
             <div>
               <Home_white />
             </div>
             <span>홈</span>
           </NavigationBigItem>
         ) : (
-          <NavigationItem as={Link} to="/">
+          <NavigationItem as={Link} to="/main">
             <Home_blue />
             <span>홈</span>
           </NavigationItem>

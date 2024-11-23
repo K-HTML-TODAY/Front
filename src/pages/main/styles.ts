@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 export const MainLayout = styled.section`
-  height: 100%;
-  width: 100%;
-  min-width: 26.0625rem;
-  overflow-y: auto;
-  overflow-x: hidden;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const MainBox = styled.div`

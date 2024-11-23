@@ -5,6 +5,7 @@ export const AIwritingLayout = styled.div`
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
+  max-width: 24.375rem;
 `;
 
 export const WritingTitle = styled.div`
@@ -25,7 +26,7 @@ export const WritingBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 26.0625rem;
+  width: 24.0625rem;
   height: 100vh;
   background: #f1f5f8;
   padding-top: 2.37rem;
