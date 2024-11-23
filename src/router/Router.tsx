@@ -20,7 +20,11 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: '',
+        path: '/',
+        element: <Splash />,
+      },
+      {
+        path: 'main',
         element: <MainPage />,
       },
       {
@@ -28,10 +32,6 @@ const router = createBrowserRouter([
         element: <JobPage />,
       },
     ],
-  },
-  {
-    path: '/splash',
-    element: <Splash />,
   },
   {
     path: '/login',

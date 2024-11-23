@@ -111,6 +111,13 @@ const LoginLayout = styled.div`
     font-weight: 400;
     margin: 3.31rem 0 0 0;
   }
+  #error {
+    color: red;
+    font-family: Pretendard;
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin: 1rem 0 0 0;
+  }
 
   #snsBox {
     display: flex;
