@@ -1,7 +1,7 @@
 {
   "name": "k-html-frontend",
   "version": "0.1.0",
-  "homepage": "https://github.com/K-HTML-TODAY/Front/",
+  "homepage": "https://K-HTML-TODAY.github.io/Front/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",

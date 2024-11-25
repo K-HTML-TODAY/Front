@@ -86,7 +86,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: '/Front',
+    basename: process.env.PUBLIC_URL,
   },
 );
 
